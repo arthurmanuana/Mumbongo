@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@plugin "daisyui"{
+    themes: ;
+}
+
+:root{
+  --bg: #06080f;           /* noir bleu */
+  --card: rgba(255,255,255,0.06);
+  --card2: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.10);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.65);
+
+  --gold: #f5b942;         /* accent principal */
+  --gold2: #ff8a3d;        /* variation */
+  --mint: #2ee59d;         /* accent secondaire */
+  --nav-offset: 92px;
+}
+
+section[id], div[id] {
+  scroll-margin-top: var(--nav-offset);
+}
+
+:root {
+  --nav-h: 104px; /* 88px + pt-4(16px) = 104px */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* bonus: évite les surprises sur certains navigateurs */
+body {
+  overflow-x: hidden;
+}
+
+
+/* --- Testimonials marquee (stable) --- */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* car on duplique 2x */
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Container qui masque bien */
+.marquee-outer {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track = le ruban qui bouge */
+.marquee-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  gap: 16px;
+  will-change: transform;
+}
+
+@media (min-width: 640px) {
+  .marquee-track { gap: 24px; }
+}
+
+.marquee-left { animation: marquee-left 28s linear infinite; }
+.marquee-right { animation: marquee-right 32s linear infinite; }
+
+/* Pause hover sur desktop */
+@media (hover: hover) {
+  .marquee-outer:hover .marquee-left,
+  .marquee-outer:hover .marquee-right {
+    animation-play-state: paused;
+  }
+}
+
+/* ===== DaisyUI / Popup background fix (anti-transparence) ===== */
+.dropdown-content,
+.menu,
+.menu :where(li > ul),
+.select select,
+.modal-box {
+  background: rgba(10, 12, 18, 0.96) !important; /* fond sombre opaque */
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(18px);
+}
+
+.dropdown-content a,
+.dropdown-content button,
+.menu a,
+.menu button {
+  color: rgba(241, 245, 249, 0.95) !important; /* texte clair */
+}
+
+.dropdown-content a:hover,
+.dropdown-content button:hover,
+.menu a:hover,
+.menu button:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
