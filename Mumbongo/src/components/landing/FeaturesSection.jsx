@@ -58,7 +58,7 @@ export default function FeaturesSection() {
 
         <Reveal delay={0.12}>
           <p className="mt-3 mx-auto max-w-2xl text-base" style={{ color: "var(--muted)" }}>
-            MobiStock est conçu pour être rapide, simple et agréable — sans surcharge, sans jargon,
+            Mumbongo est conçu pour être rapide, simple et agréable — sans surcharge, sans jargon,
             juste l’essentiel pour vendre et contrôler.
           </p>
         </Reveal>

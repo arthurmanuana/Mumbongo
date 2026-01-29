@@ -3,7 +3,7 @@ import Reveal from "../ui/Reveal";
 export default function FaqSection() {
   const faqs = [
     {
-      q: "Est-ce que MobiStock est gratuit ?",
+      q: "Est-ce que Mumbongo est gratuit ?",
       a: "Oui, la version V1 est gratuite pour démarrer. Certaines options avancées pourront devenir payantes plus tard, mais vous serez toujours prévenu à l’avance.",
     },
     {

@@ -32,30 +32,29 @@ export default function Navbar() {
   };
 
   const goTo = (id) => {
-  closeDrawer();
+    closeDrawer();
 
-  const target = document.getElementById(id);
-  const nav = document.getElementById("site-nav");
-  if (!target) return;
+    const target = document.getElementById(id);
+    const nav = document.getElementById("site-nav");
+    if (!target) return;
 
-  // Hauteur réelle de la navbar (avec son padding)
-  const navH = nav ? nav.getBoundingClientRect().height : 88;
+    // Hauteur réelle de la navbar (avec son padding)
+    const navH = nav ? nav.getBoundingClientRect().height : 88;
 
-  // Position de la section sur la page
-  const targetTop = window.scrollY + target.getBoundingClientRect().top;
+    // Position de la section sur la page
+    const targetTop = window.scrollY + target.getBoundingClientRect().top;
 
-  // On scrolle en gardant une marge (petit confort UX)
-  const offset = navH + 18;
+    // On scrolle en gardant une marge (petit confort UX)
+    const offset = navH + 18;
 
-  window.scrollTo({
-    top: Math.max(0, targetTop - offset),
-    behavior: "smooth",
-  });
+    window.scrollTo({
+      top: Math.max(0, targetTop - offset),
+      behavior: "smooth",
+    });
 
-  // SEO / partage
-  window.history.replaceState(null, "", `#${id}`);
-};
-
+    // SEO / partage
+    window.history.replaceState(null, "", `#${id}`);
+  };
 
   return (
     <div className="sticky top-0 z-50">
@@ -63,7 +62,11 @@ export default function Navbar() {
         {/* On réserve une hauteur stable */}
         <div className="h-[88px] flex items-start">
           <div className="drawer drawer-end w-full">
-            <input id="landing-drawer" type="checkbox" className="drawer-toggle" />
+            <input
+              id="landing-drawer"
+              type="checkbox"
+              className="drawer-toggle"
+            />
 
             {/* Barre */}
             <div className="drawer-content">
@@ -71,7 +74,9 @@ export default function Navbar() {
                 id="site-nav"
                 className="rounded-2xl border backdrop-blur-xl shadow-lg transition-all duration-300"
                 style={{
-                  background: scrolled ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.04)",
+                  background: scrolled
+                    ? "rgba(255,255,255,0.06)"
+                    : "rgba(255,255,255,0.04)",
                   borderColor: "var(--border)",
                 }}
               >
@@ -82,17 +87,26 @@ export default function Navbar() {
                     onClick={() => goTo("home")}
                     className="flex items-center gap-2 text-left"
                   >
-                    <div
-                      className="h-9 w-9 rounded-xl border"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, rgba(245,185,66,0.25), rgba(46,229,157,0.18))",
-                        borderColor: "rgba(255,255,255,0.12)",
-                      }}
+                    <img
+                      src="/logo.png"
+                      alt="Mumbongo logo"
+                      className="
+    h-11 w-11
+    rounded-xl
+    object-contain
+    bg-white/[0.03]
+    p-1
+    border border-white/10
+  "
                     />
                     <div className="leading-tight">
-                      <div className="font-semibold tracking-tight">Mumbongo</div>
-                      <div className="text-xs" style={{ color: "var(--muted)" }}>
+                      <div className="font-semibold tracking-tight">
+                        Mumbongo
+                      </div>
+                      <div
+                        className="text-xs"
+                        style={{ color: "var(--muted)" }}
+                      >
                         Stock • Ventes • Dettes
                       </div>
                     </div>
@@ -115,14 +129,20 @@ export default function Navbar() {
 
                   {/* Actions */}
                   <div className="flex items-center gap-2">
-                    <a href="/login" className="hidden sm:inline-flex btn btn-ghost btn-sm">
+                    <a
+                      href="/login"
+                      className="hidden sm:inline-flex btn btn-ghost btn-sm"
+                    >
                       Se connecter
                     </a>
 
                     <a
                       href="/register"
                       className="hidden sm:inline-flex btn btn-sm border-0 text-black font-semibold"
-                      style={{ background: "linear-gradient(90deg, var(--gold), var(--gold2))" }}
+                      style={{
+                        background:
+                          "linear-gradient(90deg, var(--gold), var(--gold2))",
+                      }}
                     >
                       Commencer
                     </a>
@@ -146,11 +166,18 @@ export default function Navbar() {
 
               <div
                 className="min-h-full w-80 p-4 border-l"
-                style={{ background: "rgba(6,8,15,0.96)", borderColor: "var(--border)" }}
+                style={{
+                  background: "rgba(6,8,15,0.96)",
+                  borderColor: "var(--border)",
+                }}
               >
                 <div className="flex items-center justify-between">
                   <div className="font-semibold">Menu</div>
-                  <button type="button" className="btn btn-ghost btn-sm" onClick={closeDrawer}>
+                  <button
+                    type="button"
+                    className="btn btn-ghost btn-sm"
+                    onClick={closeDrawer}
+                  >
                     ✕
                   </button>
                 </div>
@@ -176,7 +203,10 @@ export default function Navbar() {
                   <a
                     href="/login"
                     className="btn btn-outline flex-1"
-                    style={{ borderColor: "var(--border)", color: "var(--text)" }}
+                    style={{
+                      borderColor: "var(--border)",
+                      color: "var(--text)",
+                    }}
                     onClick={closeDrawer}
                   >
                     Login
@@ -184,7 +214,10 @@ export default function Navbar() {
                   <a
                     href="/register"
                     className="btn flex-1 border-0 text-black font-semibold"
-                    style={{ background: "linear-gradient(90deg, var(--gold), var(--gold2))" }}
+                    style={{
+                      background:
+                        "linear-gradient(90deg, var(--gold), var(--gold2))",
+                    }}
                     onClick={closeDrawer}
                   >
                     Start
@@ -196,7 +229,6 @@ export default function Navbar() {
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </div>

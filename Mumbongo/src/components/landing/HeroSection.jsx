@@ -52,7 +52,7 @@ export default function HeroSection() {
               className="mt-4 max-w-xl text-base sm:text-lg"
               style={{ color: "var(--muted)" }}
             >
-              MobiStock vous aide à suivre vos produits, enregistrer vos ventes et contrôler les dettes
+              Mumbongo vous aide à suivre vos produits, enregistrer vos ventes et contrôler les dettes
               clients — directement depuis un navigateur, sur téléphone ou PC.
             </motion.p>
 
@@ -107,7 +107,7 @@ export default function HeroSection() {
                 <span style={{ color: "var(--gold)" }} className="font-semibold">
                   +500
                 </span>{" "}
-                commerçants visent zéro pertes avec MobiStock
+                commerçants visent zéro pertes avec Mumbongo
               </p>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function HeroSection() {
               {/* ✅ Ici tu mets ton image mockup */}
               <img
                 src="/images/mockups/dashboard.png"
-                alt="Aperçu MobiStock"
+                alt="Aperçu Mumbongo"
                 className="w-full h-[320px] sm:h-[420px] object-cover"
               />
             </div>

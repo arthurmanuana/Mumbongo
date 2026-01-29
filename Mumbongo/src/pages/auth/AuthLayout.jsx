@@ -13,16 +13,20 @@ export default function AuthLayout({ title, subtitle, children }) {
         {/* Top mini-nav */}
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <div
-              className="h-9 w-9 rounded-xl border"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(245,185,66,0.25), rgba(46,229,157,0.18))",
-                borderColor: "rgba(255,255,255,0.12)",
-              }}
+            <img
+              src="/logo.png"
+              alt="Mumbongo logo"
+              className="
+    h-11 w-11
+    rounded-xl
+    object-contain
+    bg-white/[0.03]
+    p-1
+    border border-white/10
+  "
             />
             <div className="leading-tight">
-              <div className="font-semibold tracking-tight">MobiStock</div>
+              <div className="font-semibold tracking-tight">Mumbongo</div>
               <div className="text-xs" style={{ color: "var(--muted)" }}>
                 Stock • Ventes • Dettes
               </div>
@@ -54,7 +58,10 @@ export default function AuthLayout({ title, subtitle, children }) {
               {subtitle}
             </p>
 
-            <div className="mt-6 space-y-3 text-sm" style={{ color: "var(--muted)" }}>
+            <div
+              className="mt-6 space-y-3 text-sm"
+              style={{ color: "var(--muted)" }}
+            >
               <div className="flex gap-2">
                 <span>✅</span>
                 <p>Mobile-first : pensé pour la RDC, rapide sur téléphone.</p>

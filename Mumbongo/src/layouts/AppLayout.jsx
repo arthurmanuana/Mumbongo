@@ -38,15 +38,15 @@ export default function AppLayout() {
           >
             <div className="flex items-center justify-between px-4 py-3">
               <button
-                className="btn btn-ghost btn-sm"
+                className="bg-white/[0.03] text-slate-100 hover:bg-white/[0.06]"
                 onClick={() => setDrawerOpen(true)}
               >
                 ☰
               </button>
 
-              <div className="font-semibold">MobiStock</div>
+              <div className="text-white font-semibold">Mumbongo</div>
 
-              <button className="btn btn-ghost btn-sm" onClick={logout}>
+              <button className="bg-white/[0.03] text-slate-100 hover:bg-white/[0.06]" onClick={logout}>
                 ⎋
               </button>
             </div>
@@ -76,16 +76,22 @@ export default function AppLayout() {
                   {/* Header */}
                   <div className="p-5 border-b border-white/10">
                     <div className="flex items-center gap-3">
-                      <div
-                        className="h-11 w-11 rounded-2xl border border-white/10"
-                        style={{
-                          background:
-                            "linear-gradient(135deg, rgba(245,185,66,0.22), rgba(46,229,157,0.12))",
-                        }}
+                      <img
+                        src="/logo.png"
+                        alt="Mumbongo logo"
+                        className="
+    h-11 w-11
+    rounded-xl
+    object-contain
+    bg-white/[0.03]
+    p-1
+    border border-white/10
+  "
                       />
+
                       <div className="min-w-0">
                         <div className="text-slate-100 font-semibold leading-tight">
-                          MobiStock
+                          Mumbongo
                         </div>
                         <div className="text-xs text-slate-400 mt-0.5 truncate">
                           {shop?.name
